@@ -32,6 +32,9 @@
   </noscript>
   <!-- End Facebook Pixel Code -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     /* ===== CSS Reset ===== */
     * {
@@ -40,110 +43,210 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --gold: #d4a944;
+      --gold-light: #f2d78a;
+      --charcoal: #161616;
+      --charcoal-light: #232323;
+      --cream: #faf7f0;
+      --text-muted: #6b6b6b;
+    }
+
     /* ===== Body styling ===== */
     body {
-      font-family: Arial, sans-serif;
-      color: #333;
-      background-color: #fff;
-      line-height: 1.6;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: #2b2b2b;
+      background-color: var(--cream);
+      line-height: 1.7;
       margin: 0;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', Georgia, serif;
     }
 
     /* ===== Header styling ===== */
     .header {
       text-align: center;
-      padding: 1rem;
-      background-color: #f7f7f7;
-      border-bottom: 1px solid #ccc;
+      padding: 3rem 1.5rem 2.5rem;
+      background: linear-gradient(160deg, var(--charcoal) 0%, var(--charcoal-light) 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
     .logo-section {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .logo {
-      font-size: 2rem;
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: 2px;
       margin: 0;
     }
 
     .logo span {
-      color: #e60000; /* Accent color */
+      color: var(--gold); /* Accent color */
+    }
+
+    .rating {
+      margin-bottom: 1.75rem;
     }
 
     .rating p {
-      font-weight: bold;
-      margin: 0.5rem 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      background: rgba(255,255,255,0.06);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212,169,68,0.35);
     }
 
     .star {
       color: #FFD700;
-      margin-left: 4px;
     }
 
     /* ===== Button group styling ===== */
     .btn-group {
-      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
     }
 
     .primary-btn,
     .secondary-btn {
       cursor: pointer;
       border: none;
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      margin: 0.5rem;
-      border-radius: 4px;
-      text-decoration: none; /* So links look like buttons */
-      display: inline-block;
+      padding: 0.9rem 1.6rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
     }
 
     .primary-btn {
-      background-color: #e60000;
-      color: #fff;
+      background: linear-gradient(135deg, var(--gold), #b8862c);
+      color: #1a1a1a;
+      box-shadow: 0 6px 16px rgba(212,169,68,0.35);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(212,169,68,0.45);
     }
 
     .secondary-btn {
-      background-color: #333;
+      background: transparent;
       color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+      transform: translateY(-2px);
     }
 
     /* ===== About section ===== */
     .about-section {
-      padding: 1.5rem;
-      max-width: 800px;
+      padding: 3rem 1.5rem;
+      max-width: 760px;
       margin: 0 auto;
       text-align: center;
     }
 
     .about-section h2 {
-      margin-bottom: 1rem;
-      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      font-size: 2rem;
+      color: var(--charcoal);
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.6rem auto 0;
+      border-radius: 2px;
+    }
+
+    .about-section p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
     }
 
     /* ===== Deals section ===== */
     .deals-section {
-      padding: 1.5rem;
+      padding: 2rem 1.5rem 3.5rem;
       max-width: 800px;
       margin: 0 auto;
     }
 
     .deals-section h2 {
       text-align: center;
-      margin-bottom: 1rem;
-      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: var(--charcoal);
+      position: relative;
+    }
+
+    .deals-section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.6rem auto 0;
+      border-radius: 2px;
     }
 
     .deal-item {
       display: flex;
       align-items: center;
-      background-color: #f9f9f9;
-      margin: 0.5rem 0;
-      padding: 1rem;
-      border-radius: 4px;
+      background-color: #fff;
+      margin: 0 0 1rem 0;
+      padding: 1.1rem 1.4rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      border: 1px solid #eee0c2;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .deal-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.09);
     }
 
     .deal-item img {
-      margin-right: 1rem;
+      margin-right: 1.25rem;
+      border-radius: 6px;
+      flex-shrink: 0;
     }
 
     .deal-info {
@@ -152,8 +255,23 @@
     }
 
     .deal-text {
-      margin: 0.25rem 0;
+      margin: 0.15rem 0;
       font-size: 1rem;
+      color: #333;
+    }
+
+    .deal-text strong {
+      color: var(--charcoal);
+      font-size: 1.08rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 480px) {
+      .logo { font-size: 2rem; }
+      .primary-btn, .secondary-btn { width: 100%; justify-content: center; }
+      .btn-group { flex-direction: column; align-items: stretch; }
+      .deal-item { flex-direction: column; text-align: center; }
+      .deal-item img { margin: 0 0 0.75rem 0; }
     }
   </style>
 </head>
@@ -165,7 +283,6 @@
 
   <header class="header">
     <div class="logo-section">
-      <!-- Replace with your logo image if desired -->
       <h1 class="logo">STEP 1 <span>LIQUOR</span></h1>
     </div>
 
@@ -174,17 +291,7 @@
     </div>
 
     <div class="btn-group">
-      <!--
-        We add inline JS (onclick) to fire both a Facebook Pixel event
-        and a Google Tag Manager dataLayer event for each button.
-        Replace YOUR_LOCATION and phone number as needed.
-
-        In GTM, create two Custom Event triggers:
-          - Event name: "get_directions_click"
-          - Event name: "call_click"
-        Then hook each trigger up to a Google Ads Conversion Tracking tag.
-      -->
-      <a
+      
         href="https://goo.gl/maps/YOUR_LOCATION"
         target="_blank"
         class="primary-btn"
@@ -192,7 +299,7 @@
       >
         Get Directions & Visit Us
       </a>
-      <a
+      
         href="tel:+1234567890"
         class="secondary-btn"
         onclick="fbq('track', 'CallButtonClick'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'call_click'});"
