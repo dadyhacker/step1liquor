@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MD89F2M9');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Step 1 Liquor</title>
@@ -150,6 +158,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD89F2M9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header class="header">
     <div class="logo-section">
@@ -163,21 +175,27 @@
 
     <div class="btn-group">
       <!--
-        We add inline JS (onclick) to fire a Facebook Pixel event
-        for each button. Replace YOUR_LOCATION and phone number as needed.
+        We add inline JS (onclick) to fire both a Facebook Pixel event
+        and a Google Tag Manager dataLayer event for each button.
+        Replace YOUR_LOCATION and phone number as needed.
+
+        In GTM, create two Custom Event triggers:
+          - Event name: "get_directions_click"
+          - Event name: "call_click"
+        Then hook each trigger up to a Google Ads Conversion Tracking tag.
       -->
       <a
         href="https://goo.gl/maps/YOUR_LOCATION"
         target="_blank"
         class="primary-btn"
-        onclick="fbq('track', 'DirectionsButtonClick');"
+        onclick="fbq('track', 'DirectionsButtonClick'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'get_directions_click'});"
       >
         Get Directions & Visit Us
       </a>
       <a
         href="tel:+1234567890"
         class="secondary-btn"
-        onclick="fbq('track', 'CallButtonClick');"
+        onclick="fbq('track', 'CallButtonClick'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'call_click'});"
       >
         Call Us Now
       </a>
